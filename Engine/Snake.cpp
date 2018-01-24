@@ -58,7 +58,7 @@ void Snake::Grow()
 {
 	if (this->_nSeg < this->_nMaxSeg)
 	{
-		this->_segments[_nSeg].InitBody();
+		this->_segments[_nSeg].InitBody(this->_cycle);
 		this->_nSeg++;
 	}
 }
@@ -82,9 +82,22 @@ void Snake::Segment::InitHead(const Location& loc)
 	this->_loc = loc;
 	this->_c = Snake::_headColor;
 }
-void Snake::Segment::InitBody()
+void Snake::Segment::InitBody(int& cycle)
 {
-	this->_c = Snake::_bodyColor;
+	switch (cycle)
+	{
+	case (0):
+		this->_c = Colors::MakeRGB(124, 252, 0);
+		break;
+	case(1):
+		this->_c = Colors::MakeRGB(0, 100, 0);
+		break;
+	case(2):
+		this->_c = Colors::MakeRGB(107, 142, 35);
+		cycle = -1;
+		break;
+	}
+	cycle++;
 }
 void Snake::Segment::Follow(const Segment& next)
 {

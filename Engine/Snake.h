@@ -12,7 +12,7 @@ private:
 	{
 	public:
 		void InitHead(const Location &loc);
-		void InitBody();
+		void InitBody(int& cycle);
 		void Follow(const Segment& next);
 		void MoveBy(const Location &delta_loc);
 		void Draw(Board &board)const;
@@ -23,21 +23,23 @@ private:
 		Color _c;
 	};
 
-public:
+public://functions
 	bool isInTileCeptEnd(const Location& target_loc)const;
-
-
 	bool isSpotFreeOfSegments(const Location &loc) const;
 	Snake(const Location &loc);
 	void MoveBy(const Location &delt_loc);
 	void Grow();
 	void Draw(Board &board)const;
 	Location GetNextHeadLocation(const Location &delt_loc)const;
-	
 	int GetnSeg() { return this->_nSeg; }
+public://variables
 	static constexpr int _nMaxSeg = 500;
 	Segment _segments[_nMaxSeg];
 	int _nSeg = 1;
+	int _cycle = 0;
+
+
+
 private:
 
 
