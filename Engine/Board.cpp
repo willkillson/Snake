@@ -16,7 +16,15 @@ void Board::DrawCell(Location & loc, Color c)
 	assert(loc.x < this->_width);
 	assert(loc.y >= 0);
 	assert(loc.y < this->_height);
-	this->_gfx.DrawRectDim(loc.x*this->_dimension, loc.y*this->_dimension, this->_dimension, this->_dimension,  c);
+	this->_gfx.DrawRectDim(loc.x*this->_dimension+this->xpos, loc.y*this->_dimension + this->ypos, this->_dimension, this->_dimension,  c);
+}
+
+void Board::DrawBorder(const Color c)
+{
+	_gfx.DrawRectDim(0, 0, Graphics::ScreenWidth, _dimension, c);
+	_gfx.DrawRectDim(0, 0, _dimension, Graphics::ScreenHeight, c);
+	_gfx.DrawRectDim(Graphics::ScreenWidth-_dimension,0, _dimension, Graphics::ScreenHeight, c);
+	_gfx.DrawRectDim(0 , Graphics::ScreenHeight- _dimension, Graphics::ScreenWidth, _dimension, c);
 }
 
 bool Board::isInsideBoard(const Location & loc) const

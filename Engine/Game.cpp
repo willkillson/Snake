@@ -76,7 +76,7 @@ void Game::ComposeFrame()
 	else
 	{
 		snake.Draw(board);
-
+		this->board.DrawBorder(Colors::Cyan);
 		auto itb = _powers.begin();
 		auto ite = _powers.end();
 		for (; itb < ite; itb++)
