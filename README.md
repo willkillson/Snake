@@ -1,5 +1,6 @@
 # Snake
-![untitled](https://user-images.githubusercontent.com/26101774/35308811-a2ae1a80-0066-11e8-9366-20f724ac07fd.png)
+![untitled](https://user-images.githubusercontent.com/26101774/35312522-19fd6192-0079-11e8-91eb-e52e5ca0c1a7.png)
+
 
 This is my solution too
 
