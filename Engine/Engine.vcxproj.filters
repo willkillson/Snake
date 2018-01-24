@@ -54,9 +54,6 @@
     <ClInclude Include="SpriteCodex.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Location.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Board.h">
       <Filter>Header Files\MY</Filter>
     </ClInclude>
@@ -70,6 +67,9 @@
       <Filter>Header Files\MY</Filter>
     </ClInclude>
     <ClInclude Include="Snake.h">
+      <Filter>Header Files\MY</Filter>
+    </ClInclude>
+    <ClInclude Include="Location.h">
       <Filter>Header Files\MY</Filter>
     </ClInclude>
   </ItemGroup>
@@ -95,9 +95,6 @@
     <ClCompile Include="SpriteCodex.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Location.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Board.cpp">
       <Filter>Source Files\MY</Filter>
     </ClCompile>
@@ -112,6 +109,9 @@
     </ClCompile>
     <ClCompile Include="Power.cpp">
       <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Location.cpp">
+      <Filter>Source Files\MY</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

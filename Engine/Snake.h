@@ -24,6 +24,8 @@ private:
 	};
 
 public:
+	bool isInTileCeptEnd(const Location& target_loc)const;
+
 
 	bool isSpotFreeOfSegments(const Location &loc) const;
 	Snake(const Location &loc);
@@ -31,17 +33,18 @@ public:
 	void Grow();
 	void Draw(Board &board)const;
 	Location GetNextHeadLocation(const Location &delt_loc)const;
+	
 	int GetnSeg() { return this->_nSeg; }
 	static constexpr int _nMaxSeg = 500;
 	Segment _segments[_nMaxSeg];
-
+	int _nSeg = 1;
 private:
+
 
 	static constexpr Color _headColor = Colors::Yellow;
 	static constexpr Color _bodyColor = Colors::Green;
 
 
-	int _nSeg = 1;
 
 
 	

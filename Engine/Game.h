@@ -44,42 +44,35 @@ private:
 	void UpdateModel();
 	/********************************/
 	/*  User Functions              */
-	/********************************/
 	bool isGoodInput();
 	bool isNextASegment();
 	bool isNextAPower();
 
-
-	//game loop functions
 	void GetInputFromKeybrd();
 	void UpdatePowerUps();
 	void UpdateSnake();
+	/********************************/
+
 
 private:
 	MainWindow& wnd;
 	Graphics gfx;
 	/********************************/
 	/*  User Variables              */
-	/********************************/
+
 	int count = 0;
 	static constexpr int powers = 5;
-
-
-	//testvar for win condition
 	int test = 0;
-	//
-
 	Board board;
 	Snake snake;
 	Location _delta_loc = { 1,0 };
 	std::vector<Power> _powers;
-
-
 	int _nPowersEaten = 0;
 	int snekMovePeriod = 20;
 	int snekMoveCounter = 0;
 	bool _DidTheSnakeJustEat;
-
 	bool isGameOver = false;
 	std::mt19937 rng;
+	/********************************/
+
 };

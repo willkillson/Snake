@@ -79,7 +79,6 @@ void Game::ComposeFrame()
 
 		auto itb = _powers.begin();
 		auto ite = _powers.end();
-
 		for (; itb < ite; itb++)
 		{
 			itb->Draw(board);
@@ -237,18 +236,20 @@ void Game::UpdateSnake()
 	if (snekMoveCounter >= snekMovePeriod)
 	{
 		snekMoveCounter = 0;
-		if (!board.isInsideBoard(snake.GetNextHeadLocation(this->_delta_loc)))
+		const Location next = snake.GetNextHeadLocation(_delta_loc);
+
+		if (!board.isInsideBoard(next)||snake.isInTileCeptEnd(next))
 		{
 			test = 2;//2 means next was out of bounds
 			this->isGameOver = true;
 		}
 
-		//if the next is a segment, game is over
-		if (this->isNextASegment())
-		{
-			test = 1;//1 means next was a segment
-			//this->isGameOver = true;
-		}
+		////if the next is a segment, game is over
+		//if (this->isNextASegment())
+		//{
+		//	test = 1;//1 means next was a segment
+		//	//this->isGameOver = true;
+		//}
 
 		else {
 			if (this->isNextAPower())

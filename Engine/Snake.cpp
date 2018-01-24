@@ -3,6 +3,21 @@
 
 
 
+bool Snake::isInTileCeptEnd(const Location & target_loc) const
+{
+	int i = 0;
+	int p = _nSeg-1;
+
+	for (; i < p; i++)
+	{
+		if (this->_segments[i].GetLoc() == target_loc)
+		{
+			return true;
+		}
+	}
+	return false;
+}
+
 bool Snake::isSpotFreeOfSegments(const Location & loc) const
 {
 

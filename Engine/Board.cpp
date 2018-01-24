@@ -21,5 +21,7 @@ void Board::DrawCell(Location & loc, Color c)
 
 bool Board::isInsideBoard(const Location & loc) const
 {
-	return loc.x>=0 &&loc.x <=_gfx.ScreenWidth&&loc.y>=0&&loc.y<=_gfx.ScreenHeight;
+
+	return loc.x>=0 &&loc.x <= this->_width &&
+		loc.y>=0&&loc.y<this->_height;
 }
